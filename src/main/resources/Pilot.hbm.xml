@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<hibernate-mapping package="org.gonicollazo.airlines.models">
+
+	<class name="Pilot" table="pilot">
+		<id name="id" column="id">
+			<generator class="foreign">
+				<param name="property">aircraft</param>
+			</generator>
+		</id>
+		<property name="name" column="name" />
+		<property name="liciense" column="liciense" />
+		<one-to-one name="aircraft" cascade="all"/>
+	</class>
+</hibernate-mapping>
